@@ -1,7 +1,23 @@
 import React, {useEffect, useState} from "react";
 import { API } from '../../API/api-service'
 import {useCookies} from "react-cookie";
+import Footer from "../footer";
+import {createTheme, ThemeProvider} from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Container from '@mui/material/Container';
+import Grid2 from "@mui/material/Unstable_Grid2";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
+
+const darkTheme = createTheme({
+    palette: {
+        mode: 'dark',
+    },
+});
 
 function Auth() {
 
@@ -12,7 +28,6 @@ function Auth() {
 
     useEffect( () => {
         // TODO add loading spinner gif/svg while this check is running on page load, to hide login form for 2seconds
-        console.log(cookies);
         if(cookies["auth-token"]) window.location.href = '/';
     }, [cookies]);
 
@@ -25,27 +40,88 @@ function Auth() {
 
     return (
 
-        <div>
-            <label htmlFor="username">Username</label>
+        <React.Fragment>
+            <ThemeProvider theme={darkTheme}>
+                <CssBaseline />
 
-            <br/>
+                <Grid
+                    container
+                    direction="column"
+                    justifyContent="center"
+                    alignItems="center"
+                    style={{ minHeight: '95vh', }}
+                >
+                    <Grid item container direction="column" style={{maxWidth: '300px'}}>
 
-            <input id="username" type="text" placeholder="username" value={username}
-                   onChange={ evt => setUsername(evt.target.value) }/>
+                        <Grid item>
+                            <Typography align="center" variant="h4" component="h1" gutterBottom>
+                                TEST
+                            </Typography>
+                        </Grid>
 
-            <br/><br/>
+                        <Grid
+                            item
+                            container
+                            direction="column"
+                            spacing={2}
+                            style={{margin: '90px 0'}}
+                        >
 
-            <label htmlFor="password">Password</label>
+                            <Grid item>
+                                <TextField
+                                    style={{width: '100%'}}
+                                    id="username"
+                                    label="Username"
+                                    value={username}
+                                    onChange={ evt => setUsername(evt.target.value) }
+                                />
+                            </Grid>
 
-            <br/>
+                            <Grid item>
+                                <TextField
+                                    style={{width: '100%'}}
+                                    id="password"
+                                    label="Password"
+                                    type="password"
+                                    variant="filled"
+                                    onChange={ evt => setPassword(evt.target.value) }
+                                />
+                            </Grid>
 
-            <input id="password" type="password" placeholder="password" value={password}
-                   onChange={ evt => setPassword(evt.target.value) }/>
+                            <Grid
+                                item
+                                container
+                                spacing={1}
+                            >
+                                <Grid xs={12} md={6} item>
+                                    <Button style={{width: '100%'}} variant="contained" onClick={loginClicked}>Login</Button>
+                                </Grid>
 
-           <br/><br/>
-           <button onClick={loginClicked}>Login</button>
-        </div>
 
+
+                                <Grid xs={12} md={6} item>
+                                    <Button style={{width: '100%'}} variant="contained" >Register</Button>
+                                </Grid>
+                            </Grid>
+
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+
+
+                <Grid
+                    container
+                    direction="column"
+                    justifyContent="center"
+                    alignItems="center"
+                    style={{ minHeight: '5vh' }}
+                >
+                    <Footer/>
+                </Grid>
+
+            </ThemeProvider>
+        </React.Fragment>
     )
 }
 
