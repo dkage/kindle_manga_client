@@ -20,11 +20,8 @@ function App() {
 
 
     // Custom Theme
-    const theme = createTheme({
-        palette: {
-            mode: 'light',
-        },
-    });
+    const theme = createTheme({});
+
 
     return (
         <ThemeProvider theme={theme}>

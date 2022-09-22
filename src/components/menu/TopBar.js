@@ -7,54 +7,37 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import useTheme from "@mui/material/styles/useTheme";
-import styled from "@mui/material";
+import { styled } from '@mui/material/styles';
 
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     height: '100vh',
-//   },
-//   topBar: {
-//     boxShadow: 'none',
-//   }
-// }))
 
 
 export default function TopBar() {
-  const theme = useTheme();
+    const theme = useTheme();
 
-  // const useStyles = makeStyles((theme) => ({
-  //   appBar: {
-  //     boxShadow: 'none',
-  //   },
-  // }));
+    const NewAppBar = styled(AppBar)(
+        ({ theme }) =>
+            `box-shadow: none`
+    )
 
-  // const classes = useStyles();
+    return (
 
-  return (
+        <Box sx={{flexGrow: 1}}>
 
-      <Box sx={{flexGrow: 1}}>
+            <NewAppBar color="inherit">
+                <Toolbar>
+                    <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{mr: 2}}>
+                        <MenuIcon/>
+                    </IconButton>
+                    <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
+                        KindleManga
+                    </Typography>
+                    {/*<Button color="inherit">Create Account</Button>*/}
+                    <Button color="inherit">Login</Button>
+                </Toolbar>
+            </NewAppBar>
 
-        <AppBar color="inherit">
-          <Toolbar>
-            <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{mr: 2}}
-            >
-              <MenuIcon/>
-            </IconButton>
-            <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-              KindleManga
-            </Typography>
-            {/*<Button color="inherit">Create Account</Button>*/}
-            <Button color="inherit">Login</Button>
-          </Toolbar>
-        </AppBar>
+        </Box>
 
-      </Box>
-
-  );
+    );
 }

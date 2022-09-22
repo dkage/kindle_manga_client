@@ -8,7 +8,7 @@ function Home() {
 
     return (
         <div>
-            <TopBar theme={theme}/>
+            <TopBar name="test" theme={theme}/>
 
         </div>
     )
