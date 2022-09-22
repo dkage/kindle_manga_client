@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { API } from '../../API/api-service'
 import {useCookies} from "react-cookie";
-import Footer from "../footer";
+import Footer from "../layout/Footer";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Button from '@mui/material/Button';
@@ -19,7 +19,7 @@ const darkTheme = createTheme({
     },
 });
 
-function Auth() {
+function Login() {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -126,4 +126,4 @@ function Auth() {
 }
 
 
-export default Auth;
+export default Login;

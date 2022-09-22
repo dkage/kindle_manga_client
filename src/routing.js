@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Routes, Route } from "react-router-dom";
-import Auth from "./components/auth/auth";
+import Login from "./components/auth/Login";
 import App from "./App";
 import {CookiesProvider} from "react-cookie";
 
@@ -16,7 +16,7 @@ function Routing() {
             <Route exact path="/" element={<App/>} />
 
             {/* Auth Routes */}
-            <Route exact path="/login" element={<Auth/>} />
+            <Route exact path="/login" element={<Login/>} />
 
         </Routes>
     );
