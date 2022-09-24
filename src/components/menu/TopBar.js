@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import useTheme from "@mui/material/styles/useTheme";
-import { styled } from '@mui/material/styles';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 export default function TopBar() {
@@ -17,12 +17,15 @@ export default function TopBar() {
     //     ({ theme }) => `
     //         box-shadow: none;
     //         `)
+    // const IconButtonOutlined = styled(IconButton) (
+        // ({theme} => `
+        //
+        // )
+    // )
 
     return (
 
-        <Box sx={{flexGrow: 1}}>
-
-            <AppBar color="inherit" sx={{boxShadow: 'none'}}>
+            <AppBar color="inherit" sx={{boxShadow: 'none', zIndex: (theme) => theme.zIndex.drawer + 2}}>
                 <Toolbar>
                     <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{mr: 2}}>
                         <MenuIcon/>
@@ -30,12 +33,10 @@ export default function TopBar() {
                     <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                         KindleManga
                     </Typography>
-                    <Button color="inherit" variant="outlined" sx={{mr:2}}>Create Account</Button>
-                    <Button color="inherit" variant="outlined">Login</Button>
+                    {/*<IconButton color="inherit" variant="outlined" sx={{mr:2, border: 'solid 1px', borderRadius: '10px'}} edge='start'><AccountCircleIcon fontSize="small" sx={{margin: 0}} /></IconButton>*/}
+                    <Button startIcon={<AccountCircleIcon />} color="inherit" variant="outlined">Login</Button>
                 </Toolbar>
             </AppBar>
-
-        </Box>
 
     );
 }
