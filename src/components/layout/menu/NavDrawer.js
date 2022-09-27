@@ -3,21 +3,17 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import HomeIcon from '@mui/icons-material/Home';
-import MailIcon from '@mui/icons-material/Mail';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import LoyaltyIcon from '@mui/icons-material/Loyalty';
 import ChromeReaderModeIcon from '@mui/icons-material/ChromeReaderMode';
 import SettingsIcon from '@mui/icons-material/Settings';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
-import {styled} from "@mui/material/styles";
 
 const drawerWidth = 240;
 
@@ -53,7 +49,7 @@ export default function NavDrawer() {
                     <ListItem key={'hot'} disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
-                                <WhatshotIcon />
+                                <WhatshotIcon sx={{color: 'darkorange'}} />
                             </ListItemIcon>
                             <ListItemText primary='Hot' />
                         </ListItemButton>
@@ -68,6 +64,12 @@ export default function NavDrawer() {
                         </ListItemButton>
                     </ListItem>
 
+                </List>
+
+                <Divider />
+
+                <List sx={listStyle}>
+
                     <ListItem key={'subscriptions'} disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
@@ -77,11 +79,6 @@ export default function NavDrawer() {
                         </ListItemButton>
                     </ListItem>
 
-                </List>
-
-                <Divider />
-
-                <List sx={listStyle}>
                     <ListItem key={'my_kindle'} disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
@@ -90,6 +87,13 @@ export default function NavDrawer() {
                             <ListItemText primary='My Kindle' />
                         </ListItemButton>
                     </ListItem>
+
+                </List>
+
+                <Divider />
+
+                <List sx={listStyle}>
+
                     <ListItem key={'settings'} disablePadding>
                         <ListItemButton>
                             <ListItemIcon>

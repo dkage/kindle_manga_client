@@ -1,5 +1,5 @@
 import React from "react";
-import TopBar from "../menu/TopBar";
+import TopBar from "../layout/menu/TopBar";
 
 
 function Landing() {

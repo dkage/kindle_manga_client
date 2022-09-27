@@ -26,6 +26,7 @@ export default function TopBar() {
     return (
 
             <AppBar color="inherit" sx={{boxShadow: 'none', zIndex: (theme) => theme.zIndex.drawer + 2}}>
+
                 <Toolbar>
                     <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{mr: 2}}>
                         <MenuIcon/>
@@ -36,6 +37,7 @@ export default function TopBar() {
                     {/*<IconButton color="inherit" variant="outlined" sx={{mr:2, border: 'solid 1px', borderRadius: '10px'}} edge='start'><AccountCircleIcon fontSize="small" sx={{margin: 0}} /></IconButton>*/}
                     <Button startIcon={<AccountCircleIcon />} color="inherit" variant="outlined">Login</Button>
                 </Toolbar>
+
             </AppBar>
 
     );
